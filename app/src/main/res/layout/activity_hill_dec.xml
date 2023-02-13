@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HillDecActivity">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/msghilldec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_below="@id/imageView5"
+        android:inputType="textPersonName"
+        android:hint="Enter Message" />
+
+    <EditText
+        android:id="@+id/keyhilldec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/msghilldec"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:hint="Enter Key"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/keyhilldec"
+        android:layout_margin="25dp"
+        app:cornerRadius="15dp"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:text="Decrypt" />
+
+    <TextView
+        android:id="@+id/dectext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button5"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="Your Decrypted Text is: "
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dectext"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textView7"
+        android:layout_below="@id/dectext"
+        android:layout_marginLeft="-50dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_content_copy_24" />
+
+</RelativeLayout>

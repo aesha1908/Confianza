@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".DecActivity">
+
+    <Button
+        android:id="@+id/decsym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/symmetric"
+        app:cornerRadius="10dp" />
+
+    <Button
+        android:id="@+id/decasym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:cornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/decsym"
+        android:text="@string/asymmetric" />
+
+</RelativeLayout>

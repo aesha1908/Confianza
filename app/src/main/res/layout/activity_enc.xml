@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".EncActivity">
+
+
+    <Button
+        android:id="@+id/sym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="@string/symmetric"
+        app:cornerRadius="10dp" />
+
+    <Button
+        android:id="@+id/asym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:cornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/sym"
+        android:text="@string/asymmetric" />
+</RelativeLayout>
