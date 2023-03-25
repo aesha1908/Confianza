@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.Locale;
+
 public class HillDecActivity extends AppCompatActivity {
     EditText editText1,editText2;
     ImageView imageView;
@@ -25,50 +28,85 @@ public class HillDecActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.msghilldec);
         editText2 = findViewById(R.id.keyhilldec);
         imageView = findViewById(R.id.imageView7);
-        button = findViewById(R.id.button5);
+        button = findViewById(R.id.btnhilldec);
         textView = findViewById(R.id.textView7);
+        editText1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                editText1.setBackground(getDrawable(R.drawable.newborder));
+            }
+        });
+        editText2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText2.setBackground(getDrawable(R.drawable.newborder));
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = editText1.getText().toString();
-                String keys = editText2.getText().toString();
-                int k = 0;
-                int keyMatrix[][] = new int[3][3];
-                for (int i = 0; i < 3; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        keyMatrix[i][j] = (keys.charAt(k)) % 65;
-                        k++;
-                    }
-                }
-                int msgMatrix[][] = new int[3][1];
-                int plainMatrix[][] = new int[3][1];
-                for(int p = 0;p < 3; p++)
-                {
-                    msgMatrix[p][0] = (message.charAt(p)) % 65;
-                    for (int i = 0; i < 3; i++)
-                    {
-                        for (int j = 0; j < 1; j++)
-                        {
-                            plainMatrix[i][j] = 0;
+                String cipher = editText1.getText().toString().toLowerCase(Locale.ROOT);
+                int keys = Integer.parseInt(editText2.getText().toString());
+                char[][] rail = new char[keys][cipher.length()];
 
-                            for (int x = 0; x < 3; x++)
-                            {
-                                plainMatrix[i][j] +=
-                                        keyMatrix[i][x] * msgMatrix[x][j];
-                            }
+                // filling the rail matrix to distinguish filled
+                // spaces from blank ones
+                for (int i = 0; i < keys; i++)
+                    Arrays.fill(rail[i], '\n');
 
-                            plainMatrix[i][j] = plainMatrix[i][j] % 26;
-                        }
-                    }
+                // to find the direction
+                boolean dirDown = true;
+
+                int row = 0, col = 0;
+
+                // mark the places with '*'
+                for (int i = 0; i < cipher.length(); i++) {
+                    // check the direction of flow
+                    if (row == 0)
+                        dirDown = true;
+                    if (row == keys - 1)
+                        dirDown = false;
+
+                    // place the marker
+                    rail[row][col++] = '*';
+
+                    // find the next row using direction flag
+                    if (dirDown)
+                        row++;
+                    else
+                        row--;
                 }
-                String plain  = "";
-                for(int i = 0; i < 3; i++)
-                {
-                    plain += (char)(plainMatrix[i][0] + 65);
+
+                // now we can construct the fill the rail matrix
+                int index = 0;
+                for (int i = 0; i < keys; i++)
+                    for (int j = 0; j < cipher.length(); j++)
+                        if (rail[i][j] == '*'
+                                && index < cipher.length())
+                            rail[i][j] = cipher.charAt(index++);
+
+                StringBuilder result = new StringBuilder();
+
+                row = 0;
+                col = 0;
+                for (int i = 0; i < cipher.length(); i++) {
+                    // check the direction of flow
+                    if (row == 0)
+                        dirDown = true;
+                    if (row == keys - 1)
+                        dirDown = false;
+
+                    // place the marker
+                    if (rail[row][col] != '*')
+                        result.append(rail[row][col++]);
+
+                    // find the next row using direction flag
+                    if (dirDown)
+                        row++;
+                    else
+                        row--;
                 }
-                textView.setText(plain);
+                textView.setText(result.toString());
             }
         });
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +115,7 @@ public class HillDecActivity extends AppCompatActivity {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText("Copy to Clipboard",textView.getText().toString());
                 clipboardManager.setPrimaryClip(clipData);
-                Toast.makeText(HillDecActivity.this, "Cipher text is copied!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HillDecActivity.this, "plain text is copied!", Toast.LENGTH_SHORT).show();
             }
         });
     }

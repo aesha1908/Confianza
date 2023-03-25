@@ -14,6 +14,18 @@
         android:theme="@style/Theme.Confianza"
         tools:targetApi="31">
         <activity
+            android:name=".desdecActivity"
+            android:exported="false" />
+        <activity
+            android:name=".desencActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aesdecActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aesActivity"
+            android:exported="false" />
+        <activity
             android:name=".DSDecActivity"
             android:exported="false" />
         <activity
@@ -36,18 +48,6 @@
             android:exported="false" />
         <activity
             android:name=".PlayfairEncActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AskEncAsymActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AskEncSymActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AskDecAsymActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AskDecSymActivity"
             android:exported="false" />
         <activity
             android:name=".DecActivity"

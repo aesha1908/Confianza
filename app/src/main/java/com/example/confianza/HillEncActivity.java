@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,11 +14,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Arrays;
+import java.util.Locale;
+
 public class HillEncActivity extends AppCompatActivity {
     EditText msg,key;
     Button button;
     TextView textView;
     ImageView imageView;
+    Drawable drawable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,47 +33,45 @@ public class HillEncActivity extends AppCompatActivity {
         key = findViewById(R.id.keyhillenc);
         button = findViewById(R.id.button2);
         textView = findViewById(R.id.textView4);
-        imageView= findViewById(R.id.imageView6);
+        imageView = findViewById(R.id.imageView6);
+        drawable = getDrawable(R.drawable.newborder);
+        msg.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                msg.setBackground(drawable);
+            }
+        });
+        key.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                key.setBackground(drawable);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = msg.getText().toString();
-                String keys = key.getText().toString();
-                int k = 0;
-                int keyMatrix[][] = new int[3][3];
-                for (int i = 0; i < 3; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        keyMatrix[i][j] = (keys.charAt(k)) % 65;
-                        k++;
-                    }
+                String message = msg.getText().toString().toLowerCase(Locale.ROOT);
+                int keys = Integer.parseInt(key.getText().toString());
+                char[][] rail = new char[keys][message.length()];
+                for (int i = 0; i < keys; i++)
+                    Arrays.fill(rail[i], '\n');
+                boolean dirDown = false;
+                int row = 0, col = 0;
+                for (int i = 0; i < message.length(); i++) {
+                    if (row == 0 || row == keys - 1)
+                        dirDown = !dirDown;
+                    rail[row][col++] = message.charAt(i);
+                    if (dirDown)
+                        row++;
+                    else
+                        row--;
                 }
-                message = message.toUpperCase();
-                int msgMatrix[][] = new int[3][1];
-                int cipherMatrix[][] = new int[3][1];
-                for(int p = 0;p < 3; p++)
-                {
-                    msgMatrix[p][0] = (message.charAt(p)) % 65;
-                    for (int i = 0; i < 3; i++)
-                    {
-                        for (int j = 0; j < 1; j++)
-                        {
-                            cipherMatrix[i][j] = 0;
-                            for (int x = 0; x < 3; x++)
-                            {
-                                cipherMatrix[i][j] += keyMatrix[i][x] * msgMatrix[x][j];
-                            }
-                            cipherMatrix[i][j] = cipherMatrix[i][j] % 26;
-                        }
-                    }
-                }
-                String cipher  = "";
-                for(int i = 0; i < 3; i++)
-                {
-                    cipher += (char)(cipherMatrix[i][0] + 65);
-                }
-                textView.setText(cipher);
+                StringBuilder result = new StringBuilder();
+                for (int i = 0; i < keys; i++)
+                    for (int j = 0; j < message.length(); j++)
+                        if (rail[i][j] != '\n')
+                            result.append(rail[i][j]);
+                textView.setText(result.toString());
             }
         });
         imageView.setOnClickListener(new View.OnClickListener() {

@@ -3,21 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/bg.xml" value="0.119" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/borderret.xml" value="0.1945" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/buttonborder.xml" value="0.67" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/decc.xml" value="0.1945" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/encc.xml" value="0.1945" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/keys.xml" value="0.126" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/msg.xml" value="0.126" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/newborder.xml" value="0.1945" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/drawable/sing.xml" value="0.1945" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_aes.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_aesdec.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_ask.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_ask_algo.xml" value="0.33" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_ask_dec_asym.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_ask_dec_sym.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_ask_enc_asym.xml" value="0.2" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_ask_enc_sym.xml" value="0.16" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_dec.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_dsenc.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_enc.xml" value="0.33" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_dec.xml" value="0.22" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_desdec.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_desenc.xml" value="0.18" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_dsdec.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_dsenc.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_enc.xml" value="0.18" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_hill_dec.xml" value="0.22" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_hill_enc.xml" value="0.25" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_playfair_dec.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_playfair_enc.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_rsaenc.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_playfair_dec.xml" value="0.67" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_playfair_enc.xml" value="0.2" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_rsadec.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Confianza/app/src/main/res/layout/activity_rsaenc.xml" value="0.2" />
       </map>
     </option>
   </component>

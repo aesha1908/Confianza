@@ -8,6 +8,13 @@
     android:gravity="center"
     tools:context=".AskActivity">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/logo" />
+
     <ImageButton
         android:id="@+id/enc"
         android:layout_width="wrap_content"
